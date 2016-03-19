@@ -57,7 +57,7 @@ pypiserver_conf:
 
 pypiserver_{{ env }}_{{ package_name }}:
   cmd.run:
-  - name: source /srv/pypiserver/bin/activate; {{ server.dir.base }}/bin/pip install {%- if package.source is defined %} -e git+{{ package.source }}{%- else %} -q --extra-index-url http://pypi.python.org/simple {{ package_name }}{%- endif %} -d /srv/pypiserver/{{ env }}
+  - name: source /srv/pypiserver/bin/activate; {{ server.dir.base }}/bin/pip install {%- if package.source is defined %} -e git+{{ package.source }}{%- else %} -q --extra-index-url https://pypi.python.org/simple {{ package_name }}{%- endif %} -d /srv/pypiserver/{{ env }}
   - cwd: /srv/pypiserver
   - env:
       - 'PBR_VERSION': 'dummy'
