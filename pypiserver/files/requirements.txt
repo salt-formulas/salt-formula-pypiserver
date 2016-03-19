@@ -1,0 +1,5 @@
+gunicorn>=19.0
+watchdog==0.8.3
+pypiserver==1.0.0
+paste
+pastedeploy

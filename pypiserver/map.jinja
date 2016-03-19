@@ -1,0 +1,25 @@
+
+{%- set source_engine = salt['pillar.get']('pypiserver:server:source:engine') %}
+
+{%- load_yaml as base_defaults %}
+Debian:
+  workers: 2
+  bind:
+    port: 9000
+    host: 0.0.0.0
+  package:
+    env:
+      stable:
+        django-leonardo:
+      unstable:
+        django-leonardo:
+          source: git@repo1.robotice.cz:python-apps/django-leonardo.git#egg=django-leonardo
+  pkgs:
+    - libxml2
+    - libxml2-dev
+    - libxslt1-dev
+  dir:
+    base: /srv/pypiserver
+{%- endload %}
+
+{%- set server = salt['grains.filter_by'](base_defaults, merge=salt['pillar.get']('pypiserver:server')) %}
