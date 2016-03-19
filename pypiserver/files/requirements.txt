@@ -3,3 +3,4 @@ watchdog==0.8.3
 pypiserver==1.0.0
 paste
 pastedeploy
+passlib==1.6.5
