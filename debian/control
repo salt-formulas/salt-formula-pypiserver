@@ -10,6 +10,6 @@ Vcs-Git: https://github.com/tcpcloud/salt-formula-pypiserver.git
 
 Package: salt-formula-pypiserver
 Architecture: all
-Depends: ${misc:Depends}, salt-master, reclass
+Depends: ${misc:Depends}
 Description: pypiserver salt formula
  Install and configure pypiserver system.
